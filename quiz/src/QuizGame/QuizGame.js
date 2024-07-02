@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './QuizGame.css'; 
+import Loader from './Loader';
 
 const QuizGame = () => {
     const [questions, setQuestions] = useState([]);
@@ -43,7 +44,9 @@ const QuizGame = () => {
     }
 
     if (!questions.length) {
-        return <div>Loading...</div>;
+        return <div>
+            <Loader/>
+        </div>;
     }
 
     return (
