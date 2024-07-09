@@ -1,12 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-import QuizGame from './QuizGame/QuizGame';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import QuizList from './QuizzGame/QuizList';
+import Quiz from './QuizzGame/Quiz';
 
 function App() {
   return (
-    <div className="App">
-      <QuizGame/>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path='/' element={<QuizList />} />
+          <Route path='/quiz/:id' element={<Quiz />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
